@@ -43,3 +43,10 @@ EI = EI/I_max
 A= SHE(2,Q,Qz,Qx,I,s0,x,z)
 A = np.arange(0,5,0.2)
 print(1/A)
+
+def hhd(a):
+    def mmd(b):
+        return b*3
+    c = mmd(a)
+    print(c)
+hhd(3)
