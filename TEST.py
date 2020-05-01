@@ -5,24 +5,24 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-val = pd.read_excel("C:/Users/Lenovo/Desktop/大四下/毕设/CODE/dp_crystmorph/regionI_double_peak/region_II_excel/0.6-R2-246_04260808.xlsx")
-value = val.values
-Dw_array = np.zeros((1183))
-Dn_array = np.zeros((1183))
-k = np.zeros((1183))
-for i in range(0,value.shape[0]):
-    D0w = value[i,3]
-    nuDw = value[i,4]
-    D0n = value[i,6]
-    nuDn = value[i,7]
+# val = pd.read_excel("C:/Users/Lenovo/Desktop/大四下/毕设/CODE/dp_crystmorph/regionI_double_peak/region_II_excel/0.6-R2-246_04260808.xlsx")
+# value = val.values
+# Dw_array = np.zeros((1183))
+# Dn_array = np.zeros((1183))
+# k = np.zeros((1183))
+# for i in range(0,value.shape[0]):
+#     D0w = value[i,3]
+#     nuDw = value[i,4]
+#     D0n = value[i,6]
+#     nuDn = value[i,7]
 
-    Dw = D0w * gamma(0.5) / beta(nuDw,0.5)
-    sigmaDw = math.sqrt(nuDw*D0w*D0w - Dw*Dw)
-    Dn = D0n * gamma(0.5) / beta(nuDn,0.5)
-    sigmaDn = math.sqrt(nuDn*D0n*D0n - Dn*Dn)
-    Dw_array[i] = Dw
-    Dn_array[i] =Dn
-    k[i] = value[i,2]/value[i,5]
+#     Dw = D0w * gamma(0.5) / beta(nuDw,0.5)
+#     sigmaDw = math.sqrt(nuDw*D0w*D0w - Dw*Dw)
+#     Dn = D0n * gamma(0.5) / beta(nuDn,0.5)
+#     sigmaDn = math.sqrt(nuDn*D0n*D0n - Dn*Dn)
+#     Dw_array[i] = Dw
+#     Dn_array[i] =Dn
+#     k[i] = value[i,2]/value[i,5]
 
 # plt.title("Evolution of Diameter")
 # plt.plot(np.arange(0,1183),Dw_array.squeeze(0),'o',label="Dw")
@@ -37,24 +37,24 @@ for i in range(0,value.shape[0]):
 # plt.plot(np.arange(0,1183),k,'*')
 # plt.show()
 
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
-ax1.plot(Dw_array,'o',label='Dw')
-ax1.plot(Dn_array, 'o', label='Dn')
-plt.xlabel("number of optimized")
-plt.ylabel("D/nm")
-ax1.legend(loc='center right')
-ax2 = ax1.twinx()
-ax2.plot(k, 'k-',label='Kw/Kn')
-ax2.legend(loc="center")
-plt.ylabel("Kw/Kn")
-fig.savefig('fig.png', dpi=1000)
-plt.show()
+# fig = plt.figure()
+# ax1 = fig.add_subplot(111)
+# ax1.plot(Dw_array,'o',label='Dw')
+# ax1.plot(Dn_array, 'o', label='Dn')
+# plt.xlabel("number of optimized")
+# plt.ylabel("D/nm")
+# ax1.legend(loc='center right')
+# ax2 = ax1.twinx()
+# ax2.plot(k, 'k-',label='Kw/Kn')
+# ax2.legend(loc="center")
+# plt.ylabel("Kw/Kn")
+# fig.savefig('fig.png', dpi=1000)
+# plt.show()
 
-D0w = 66.31
-nuDw = 11.64
-D0n = 26.55
-nuDn = 27.74
+D0w = 72.62
+nuDw = 8.039
+D0n = 22.29
+nuDn = 26.47
 Dw = D0w * gamma(0.5) / beta(nuDw,0.5)
 sigmaDw = math.sqrt(nuDw*D0w*D0w - Dw*Dw)
 Dn = D0n * gamma(0.5) / beta(nuDn,0.5)
