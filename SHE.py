@@ -64,7 +64,7 @@ def SHE(order,Q,Qz,Qx,I,s0,x,z):
     S00Y00 = S00*Y00
     S20Y20 = S20*Y20
     S40Y40 = S40*Y40
-    return S00Y00
+    return SQ20
 
 
     
